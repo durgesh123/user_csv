@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing User Csv Uploads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_csv_uploads.each do |user_csv_upload| %>
+      <tr>
+        <td><%= user_csv_upload.name %></td>
+        <td><%= link_to 'Show', user_csv_upload %></td>
+        <td><%= link_to 'Edit', edit_user_csv_upload_path(user_csv_upload) %></td>
+        <td><%= link_to 'Destroy', user_csv_upload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User csv upload', new_user_csv_upload_path %>
